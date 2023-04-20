@@ -35,6 +35,11 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
   - ruby /rbenv / bundle
   - rust
 
+- install just
+```bash
+brew install just
+```
+
 - install [ripgrep](https://github.com/BurntSushi/ripgrep)
 ```bash
 brew install rg
