@@ -19,21 +19,33 @@ brew install git
 
 - get workstation repo
 ```bash
-git clone git@github.com:itscomputers/workstation.git ~/itscomputers/workstation
+git clone git@github.com:itscomputers/workstation.git ~/workstation
 ```
 
 - install [oh-my-zsh](https://ohmyz.sh/)
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-  - set `ZSH_THEME` to `af-magic`
+  - set `ZSH_THEME` to `avit`
   - set untracked files as not dirty `DISABLE_UNTRACKED_FILES_DIRTY="true"`
-  - set custom zsh `ZSH_CUSTOM=~/itscomputer/workstation/config`
+  - set custom zsh `ZSH_CUSTOM=~/workstation/config`
 
-- language tooling
-  - python / pyenv / poetry
-  - ruby /rbenv / bundle
-  - rust
+- language tooling [asdf](https://asdf-vm.com/guide/getting-started.html)
+  - install dependencies
+    ```bash
+    brew install coreutils curl
+    ```
+  - download asdf (check website for version)
+    ```bash
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0
+    ```
+
+  - add languages, eg
+    ```bash
+    asdf plugin add ruby
+    asdf latest ruby
+    asdf install ruby latest
+    ```
 
 - install just
 ```bash
@@ -54,12 +66,13 @@ $(brew --prefix)/opt/fzf/install
 - install tmux
 ```bash
 brew install tmux
-cp ~/itscomputers/workstation/config/.tmux.conf ~/
+cp ~/itscomputers/workstation/config/tmux.conf ~/
 ```
 
-- copy vim config
+- install neovim
 ```bash
-cp ~/itscomputers/workstation/config/.vimrc ~/
+brew install neovim
+cp -r ~/itscomputers/workstation/config/nvim ~/.config
 ```
 
 - restart iterm
