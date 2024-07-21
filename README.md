@@ -57,7 +57,7 @@ cp -r ~/workstation/config/alacritty ~/.config
 - install nerd font
 
 ```zsh
-brew install font-space-mono-nerd-font
+brew install font-monaspace-nerd-font
 ```
 
 ### oh my zsh
