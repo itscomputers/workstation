@@ -26,6 +26,12 @@ brew install git
 
 - generate [ssh keys](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
+- install lazygit
+
+```zsh
+brew install lazygit
+```
+
 ### workstation
 
 - get workstation repo
@@ -48,6 +54,12 @@ brew install alacritty
 cp -r ~/workstation/config/alacritty ~/.config
 ```
 
+- install nerd font
+
+```zsh
+brew install font-space-mono-nerd-font
+```
+
 ### oh my zsh
 
 - install [oh-my-zsh](https://ohmyz.sh/)
@@ -59,8 +71,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 - copy zshrc config
 
 ```zsh
-cp ~/workstation/config/.zshrc ~/.zshrc
-cp -r ~/workstation/config/alacritty ~/.config
+cp ~/workstation/.zshrc ~/.zshrc
+cp -r ~/workstation/config/zsh ~/.config
 ```
 
 - install [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting)
@@ -68,6 +80,13 @@ cp -r ~/workstation/config/alacritty ~/.config
 ```zsh
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+```
+
+- install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+
+```zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions \
+${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 ### neovim
@@ -122,6 +141,8 @@ asdf latest ruby
 asdf install ruby latest
 ```
 
+### misc
+
 - install just
 
 ```zsh
@@ -139,4 +160,10 @@ brew install rg
 ```zsh
 brew install fzf
 $(brew --prefix)/opt/fzf/install
+```
+
+- install [eza](https://github.com/eza-community/eza)
+
+```zsh
+brew install eza
 ```
