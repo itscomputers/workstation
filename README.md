@@ -167,3 +167,9 @@ $(brew --prefix)/opt/fzf/install
 ```zsh
 brew install eza
 ```
+
+- install [bat](https://github.com/sharkdp/bat)
+
+```zsh
+brew install bat
+```
