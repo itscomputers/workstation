@@ -90,6 +90,18 @@ return {
           },
         })
       end,
+      ["sorbet"] = function()
+        lspconfig["sorbet"].setup({
+          capabilities = capabilities,
+          cmd = {
+            "srb",
+            "tc",
+            "--lsp",
+            "--dir=.",
+            "--disable-watchman",
+          },
+        })
+      end,
     })
   end,
 }

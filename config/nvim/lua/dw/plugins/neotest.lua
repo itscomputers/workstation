@@ -10,6 +10,7 @@ return {
     "rcarriga/nvim-dap-ui",
     "nvim-neotest/neotest-python",
     "mfussenegger/nvim-dap-python",
+    "olimorris/neotest-rspec",
   },
   config = function()
     local neotest = require("neotest")
@@ -21,6 +22,24 @@ return {
             cwd = vim.fn.getcwd(),
             justMyCode = false,
           },
+        }),
+        require("neotest-rspec")({
+          rspec_cmd = function(position_type)
+            if position_type == "test" then
+              return vim.tbl_flatten({
+                "bundle",
+                "exec",
+                "rspec",
+                "--fail-fast",
+              })
+            else
+              return vim.tbl_flatten({
+                "bundle",
+                "exec",
+                "rspec",
+              })
+            end
+          end,
         }),
       },
     })

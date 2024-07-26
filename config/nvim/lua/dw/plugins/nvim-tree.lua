@@ -33,10 +33,12 @@ return {
         width = 30,
       },
       renderer = {
+        highlight_git = true,
         indent_markers = {
           enable = true,
         },
         icons = {
+          git_placement = "after",
           glyphs = {
             folder = {
               arrow_closed = "■",
