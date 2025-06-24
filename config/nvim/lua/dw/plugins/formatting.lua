@@ -16,9 +16,10 @@ return {
         just = { "just" },
         lua = { "stylua" },
         markdown = { "prettier" },
-        python = { "isort", "black" },
+        python = { "ruff_format" },
         ruby = { "rubyfmt" },
         rust = { "rustfmt" },
+        tex = { "tex-fmt" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
         yaml = { "prettier" },
@@ -27,6 +28,11 @@ return {
         lsp_fallback = true,
         async = false,
         timeout_ms = 1000,
+      },
+      formatters = {
+        ["tex-fmt"] = {
+          prepend_args = { "--wraplen", "135" },
+        },
       },
     })
 

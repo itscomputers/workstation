@@ -1,7 +1,7 @@
 return {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   dependencies = {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
@@ -23,33 +23,30 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         "clangd",
-        "cssls",
         "elixirls",
         "html",
-        -- "jdtls" or "java_language_server"
         "jsonls",
-        "ltex",
         "lua_ls",
-        "pyright",
-        "ruby_lsp",
+        "marksman",
+        "ruff",
         "rust_analyzer",
         "tailwindcss",
-        "tsserver",
+        "texlab",
+        "ts_ls",
         "yamlls",
       },
     })
 
     mason_tool_installer.setup({
       ensure_installed = {
-        "black",
         "clang-format",
         "debugpy",
         "eslint_d",
-        "flake8",
-        "isort",
         "prettier",
-        "rubyfmt",
+        "ruff",
+        "stylelint",
         "stylua",
+        "tex-fmt",
       },
     })
   end,

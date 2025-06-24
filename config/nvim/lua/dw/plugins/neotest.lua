@@ -11,6 +11,7 @@ return {
     "nvim-neotest/neotest-python",
     "mfussenegger/nvim-dap-python",
     "olimorris/neotest-rspec",
+    "rouge8/neotest-rust",
   },
   config = function()
     local neotest = require("neotest")
@@ -26,27 +27,33 @@ return {
         require("neotest-rspec")({
           rspec_cmd = function(position_type)
             if position_type == "test" then
-              return vim.tbl_flatten({
-                "bundle",
-                "exec",
-                "rspec",
-                "--fail-fast",
-              })
+              return vim
+                .iter({
+                  "bundle",
+                  "exec",
+                  "rspec",
+                  "--fail-fast",
+                })
+                :flatten()
+                :totable()
             else
-              return vim.tbl_flatten({
-                "bundle",
-                "exec",
-                "rspec",
-              })
+              return vim
+                .iter({
+                  "bundle",
+                  "exec",
+                  "rspec",
+                })
+                :flatten()
+                :totable()
             end
           end,
         }),
+        require("neotest-rust"),
       },
     })
 
     -- python setup
-    local path = require("mason-registry").get_package("debugpy"):get_install_path()
-    require("dap-python").setup(path .. "/venv/bin/python")
+    require("dap-python").setup("uv")
 
     -- config ui and virtual text
     local dap = require("dap")

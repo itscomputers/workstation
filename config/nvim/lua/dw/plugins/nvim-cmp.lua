@@ -12,6 +12,7 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim",
+    "micangl/cmp-vimtex",
   },
   config = function()
     local cmp = require("cmp")
@@ -43,6 +44,7 @@ return {
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
+        { name = "vimtex" },
       }),
       formatting = {
         format = lspkind.cmp_format({
@@ -53,4 +55,3 @@ return {
     })
   end,
 }
-

@@ -4,6 +4,7 @@ return {
   build = ":TSUpdate",
   dependencies = {
     "windwp/nvim-ts-autotag",
+    "RRethy/nvim-treesitter-endwise",
   },
   config = function()
     local treesitter = require("nvim-treesitter.configs")
@@ -11,11 +12,15 @@ return {
     treesitter.setup({
       highlight = {
         enable = true,
+        disable = { "latex" },
       },
       indent = {
         enable = true,
       },
       autotag = {
+        enable = true,
+      },
+      endwise = {
         enable = true,
       },
       ensure_installed = {

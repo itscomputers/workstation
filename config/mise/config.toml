@@ -1,0 +1,23 @@
+[settings]
+python.uv_venv_auto = true
+experimental = true
+idiomatic_version_file_enable_tools = ["python"]
+
+[tools]
+elixir = "latest"
+erlang = "27.1.2"
+gleam = "latest"
+java = "latest"
+lua = "latest"
+node = "23.8"
+python = "3.13"
+ruby = "3.2.8"
+rust = "latest"
+
+[tasks."marp:convert"]
+description = "convert markdown to pdf using marp"
+run = "cd $MISE_ORIGINAL_CWD && marp {{arg(name=\"md_file\")}} --pdf --theme-set {{option(name=\"style\", default=\"style.css\")}}"
+
+[tasks."tex:clean"]
+description = "clean up synctex files"
+run = "cd $MISE_ORIGINAL_CWD && rm **/*.synctex.gz"

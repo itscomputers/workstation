@@ -5,11 +5,13 @@ return {
     local lint = require("lint")
 
     lint.linters_by_ft = {
+      css = { "stylelint" },
+      scss = { "stylelint" },
       javascript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
       typescript = { "eslint_d" },
       typescriptreact = { "eslint_d" },
-      python = { "flake8" },
+      python = { "ruff" },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
